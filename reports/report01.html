@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>웹 폼</title>
+  <style>
+     span {
+        display: inline-block;
+     }
+    .right {
+      display:inline-block;
+      text-align: right;
+      width: 130px;
+      padding-right:8px;
+    }
+    .head {
+      font-weight: bold;
+      background-color: lightblue;
+      width: 800px ;
+      padding-left: 10px;
+    }
+    span.required {
+      color: red;
+      font-size: 10pt;
+    }
+    div {
+      margin: 8px;
+    }
+  </style>
+</head>
+<body>
+<h2>취업 정보 계정 만들기</h2>
+<form>
+<p><span class="required">* 필수 입력 항목</span></p>
+<p class="head">기본 정보
+  <div><span class="right">이 름<span class="required">*</span></span>
+    <input type="text" name="usr_name" size="8"></div>
+  <div><span class="right">이메일<span class="required">*</span></span>
+    <input type="email" name="email" placeholder="id@domain_name" size="15"></div>
+  <div><span class="right">암호<span class="required">*</span></span>
+    <input type="password" name="pwd" size="12"></div>
+  <div><span class="right">암호 확인<span class="required">*</span></span>
+    <input type="password" name="re_pwd" size="13"></div>
+  <div><span class="right">모바일 폰<span class="required">*</span></span>
+    <input type="tel" name="phone" placeholder="010-0000-0000"></div>
+  <div><span class="right">개인 홈페이지</span>
+    <input type="url" name="home" placeholder="http://" size="30"></div>
+  <div><span class="right">주소<span class="required">*</span></span>
+    <input type="text" name="address" size="30"></div>
+
+<p class="head">학 력
+  <div><span class="right">학교 명<span class="required">*</span></span>
+    <input type="text" name="school_name" size="12"></div>
+  <div><span class="right">전 공<span class="required">*</span></span>
+    <input type="text" name="major" size="12"></div>
+  <div><span class="right">졸업 여부<span class="required">*</span></span>
+    <select name="status">
+      <option value="0">---선택---</option>
+      <option value="1">졸업 예정</option>
+      <option value="2">졸 업</option>
+    </select></div>
+  <div><span class="right">졸업(예정)일</span>
+    <input type="date" name="grad_yr"> </div>
+
+<p class="head">업무 경력
+<div><span class="right">근무업체명 </span><input type="text" name="co" size="20"> </div>
+<div><span class="right">직 위 </span><input type="text" name="title" size="10"></div>
+<div><span class="right">담당 업무 </span><textarea cols="80" rows="10" name="duty">이전 업체에서 담당한 업무를 기술하시오.</textarea></div>
+<div><span class="right">근무년수 </span><input type="number" name="year" min="0" max="10" step="0.5">년</div>
+<p>
+<p class="head">자기소개서
+<div><span class="right">첨부 파일 </span><input type="file" name="attach"></div>
+<p style="margin-left:200px;"><input type="submit" value="제 출"> <input type="reset" value="재작성"></p>
+</form>
+</body>
+</html>
