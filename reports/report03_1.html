@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 프로그래밍</title>
+    <script>
+        function isNotDigit(n) {
+            for (var i=0; i<n.length; i++) {
+                if (!(n[i]=='0' || n[i]=='1')) {
+                    return true ;
+                }
+            }
+            return false;
+        }
+
+        function digit_hexanum(num) {
+            if (num==null || isNaN(num) || num=="") {
+                alert("값을 입력하세요.") ;
+                return -1;
+            }
+            if (isNotDigit(num)) {
+                alert('이진수를 입력하세요!') ;
+                return -1 ;
+            }
+            document.write(num + ' --->  16진수 : ') ;
+            return parseInt(num, 2).toString(16) ;
+        }
+        function get_data() {
+            var h_num, input_digit ;
+            do {
+                input_digit = prompt('이진수를 입력하세요.', "") ;
+                h_num = digit_hexanum(input_digit);
+            } while (h_num==-1) ;
+            return h_num ;
+        }
+    </script>
+</head>
+<body>
+<h2>2진수 변환기</h2>
+<p><label 이진수 <input type="text" id="digit_num">
+</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>파스칼 삼각형</title>
+    <script>
+        function pascals(numRows) {
+            if (numRows === 0)
+                return [];
+            if (numRows === 1)
+                return [[1]];
+            var result = [];
+            for (var row=1; row<=numRows; row++) {
+                var arr = [];
+                for (var col=0; col<row; col++) {
+                    if (col===0 || col===row - 1) {
+                        arr.push(1);
+                    } else {
+                        arr.push((result[row-2][col-1] + result[row-2][col]));
+                    }
+                }
+                result.push(arr);
+            }
+            return result;
+        }
+        function draw_triangles(tri) {
+            for (var i=0; i<tri.length; i++) {
+                for (var j=0; j<tri[i].length; j++) {
+                    document.write(tri[i][j] + " ") ;
+                }
+                document.write("<br>") ;
+            }
+        }
+    </script>
+</head>
+<body>
+<script>
+    h = prompt("파스칼 삼각형의 높이: ") ;
+    triangles = pascals(h) ;
+    draw_triangles(triangles) ;
+</script>
+</body>
+</html>
