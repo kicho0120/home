@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var my_request = new XMLHttpRequest() ;
+    my_request.open("GET", 'img/students/s_addresses.json') ;
+    my_request.send() ;
+    my_request.onload = function () {
+        set_student_address(my_request.responseText) ;
+    }
+
+    function set_student_address(data) {
+        var s_address = JSON.parse(data) ;
+        console.log(typeof(s_address)) ;
+        console.log(s_address) ;
+
+        //for (var i=0; i<s_address.length; i++) {
+        //   document.write("<br>" + s_address[i].name + ": " + s_address[i].address) ;
+        //}
+
+        var num_cols = 10;
+        for (var i=0; i<s_address.length; i+=num_cols){
+           var row_html = '<div class="row ms-5 mb-5">' ;
+           for (var j=0; j<num_cols; j++) {
+                row_html += '<div class="col">'
+                            +'<a href="https://' + s_address[i*num_cols+j].address + '" target="_blank">'
+                            + '<img class="rounded-circle" src=' + s_address[i*num_cols+j].name+'"img/students/.jpg"><div>'
+                            + s_address[i*num_cols+j].name+'</div></a></div>' ;
+           }
+           console.log(row_html) ;
+           document.getElementById("s_home").innerHTML += row_html ;
+        }
+        document.getElementById("s_home").innerHTML += "</div>" ;
+    }
+</script>
+<div id="demo"></div>
+</body>
+</html>

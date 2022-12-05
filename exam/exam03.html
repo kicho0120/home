@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>출생률</title>
+    <style>
+        caption {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 450px;
+            height: 150px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px dotted black;
+            text-align: center;
+            width: 100px;
+        }
+        .hd {
+            width: 150px;
+            font-weight: bold;
+        }
+        thead {
+            background-color: gray;
+            color: white;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+        tr:nth-child(even) {
+            background-color: lightblue;
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>출생통계(출생아 수, 출산율)</caption>
+    <thead>
+        <tr><th> </th><th>2019</th><th>2020</th><th>2021</th></tr>
+    </thead>
+    <tbody>
+        <tr><td class="hd">출생아 수(천 명)</td><td>302.7</td><td>272.3</td><td>260.6</td></tr>
+        <tr><td class="hd">증감율(%)</td><td>-7.4</td><td>-10.0</td><td>-4.3</td></tr>
+        <tr><td class="hd">합계 출산율(%)</td><td>0.92</td><td>0.84</td><td>0.81</td></tr>
+        <tr><td class="hd">증감율(%)</td><td>-6.0</td><td>-8.9</td><td>-3.4</td></tr>
+    </tbody>
+</table>
+</body>
+</html>

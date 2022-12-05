@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>수요 조사</title>
+    <style>
+
+        .sub {                              /* 소제목                    */
+            font-size: 1.1em ;              /* 글자 크기는 보통글씨의 1.1배 */
+            width: 600px ;                  /* 폭 : 600px               */
+            background-color: lightgray;    /* 배경색: lightgray         */
+            margin: 20px ;                  /* 여백(margin): 20px        */
+            padding : 5px 5px 5px 10px;     /* 안쪽 여백(padding): 5px    */
+        }
+        #basic {                         /* 고객 기본 정보 사항 */
+            margin-left: 50px ;             /* 왼쪽 여백: 50px   */
+        }
+        div > div {                         /* 개별 기본 정보 사항 항목 */
+            margin-bottom: 10px;            /* 아래쪽 여백: 10px      */
+        }
+        .lbl {                              /* 고객 기본 정보 항목 레이블 */
+            display: inline-block;          /* 인라인 블록 설정         */
+            width: 70px ;                   /* 폭: 70px               */
+            text-align: right;              /* 텍스트 정렬: 오른쪽 맞춤  */
+            padding-right: 10px;            /* 안쪽 여백(padding): 10px */
+        }
+
+        #questions {                        /* 설문 항목들 선택            */
+            margin-left: 20px;              /* 왼쪽 여백: 20px            */
+        }
+        li {                                /* 설문 내용 선택             */
+            margin-top: 20px;               /* 위쪽 여백 : 20px          */
+            margin-bottom: 5px;             /* 아래쪽 여백: 5px          */
+        }
+
+        #btn {                              /* 두 개의 버튼 영역 선택   */
+            width: 600px;                   /* 폭: 600px             */
+            height: 35px;                   /* 높이: 35px             */
+            text-align: center;             /* 정렬 방식: 가운데 맞춤   */
+        }
+
+
+    </style>
+</head>
+<body>
+<h2 style="margin-left:230px;" >고객 수요 조사</h2>
+<form>
+    <div class="sub">고객 기본 정보</div>
+    <div id="basic">
+        <div><span class="lbl">고객명 </span><input type="text" size="6" name="customer"></div>
+        <div><span class="lbl">전화번호 </span><input type="tel" size="13" placeholder="010-0000-0000"> </div>
+        <div><span class="lbl">이메일 </span><input type="email" size="20" placeholder="id@domain"> </div>
+    </div>
+    <div class="sub">설문 사항</div>
+    <div id="questions">
+        <ol>
+            <li>당사의 제품 중 사용하신 제품명은 무엇입니까? </li>
+                <span><input type="text" name="product"></span>
+            <li>당사 제품의 전반적인 가격은 적정하다고 생각하십니까?</li>
+                <span><input type="radio" name="price" value="expensive">비싸다
+                <input type="radio" name="price" value="normal">적당하다
+                <input type="radio" name="price" value="cheap">싸다</span>
+            <li>향후 당사 제품 중 1년 이내에 구매 의사가 있는 제품은 무엇인가요?</li>
+                <span><input type="checkbox" name="refri">냉장고
+                <input type="checkbox" name="washer">세탁기
+                <input type="checkbox" name="vacuum">청소기
+                    <input type="checkbox" name="purifier">공기청정기 </span>
+            <li>기타 제품 불만사항이 있으면 아래에 적어 주세요.</li>
+            <span><textarea rows=10 cols="70" name="suggest"></textarea> </span>
+        </ol>
+        <div id="btn"><input type="submit" value="제출"> <input type="reset" value="재 작성"></div>
+    </div>
+</form>
+</body>
+</html>
