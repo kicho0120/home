@@ -1,3 +1,4 @@
+// get_tags.js
 window.addEventListener("load", function() {
    var all_elements = document.getElementsByTagName('*') ;
    Array.prototype.forEach.call(all_elements, function(el) {
