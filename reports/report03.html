@@ -9,6 +9,23 @@
 </head>
 <body>
 <div data-include-path="report03_sample.html"></div>
-<script src="/js/get_tags.js"></script>
+<script>
+window.addEventListener("load", function() {
+   var all_elements = document.getElementsByTagName('*') ;
+   Array.prototype.forEach.call(all_elements, function(el) {
+       var includePath = el.dataset.includePath;
+       if (includePath) {
+           var xhttp = new XMLHttpRequest();
+           xhttp.onreadystatechange = function() {
+               if (this.readyState==4 && this.status==200) {
+                   el.outerHTML = this.responseText;
+               }
+           } ;
+           xhttp.open('GET', includePath, true) ;
+           xhttp.send() ;
+       } ;
+   }) ;
+}) ;
+</script>
 </body>
 </html>
